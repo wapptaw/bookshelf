@@ -1,0 +1,51 @@
+$book-height: 0.9;
+#books {
+    width: 100%;
+    & > div {
+        width: 5%;
+        height: $bg-height * $book-height;
+        position: absolute;
+        @include prefixer(transform-style, preserve-3d);
+        @include prefixer(transition, transform .5s ease);
+        margin-left: .2rem;
+        margin-top: .4rem + $bg-height * (1 - $book-height);
+        @include prefixer(transform, translateZ(-$bg-transwidth));
+        & > div {
+            position: absolute;
+            @include prefixer(transform-style, preserve-3d);
+            @include prefixer(transform-origin, 0 0);
+            background-color: #f00;
+        }
+        .b-top {
+            width: 100%;
+            height: $bg-transwidth - .1rem;
+            @include prefixer(transform, rotateX(90deg));
+        }
+        .b-down {
+            width: 100%;
+            height: $bg-transwidth - .1rem;
+            top: 100%;
+            @include prefixer(transform, rotateX(90deg));
+        }
+        .b-front {
+            width: 100%;
+            height: 100%;
+            @include prefixer(transform, translateZ($bg-transwidth -.1rem));
+        }
+        .b-behind {
+            width: 100%;
+            height: 100%;
+        }
+        .b-left {
+            width: $bg-transwidth - .1rem;
+            height: 100%;
+            @include prefixer(transform, rotateY(-90deg));
+        }
+        .b-right {
+            width: $bg-transwidth - .1rem;
+            height: 100%;
+            left: 100%;
+            @include prefixer(transform, rotateY(-90deg));
+        }
+    }
+}

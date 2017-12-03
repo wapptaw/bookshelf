@@ -1,0 +1,60 @@
+$bg-width: 100%;
+$bg-height: 2rem;
+$bg-transwidth: 1.5rem;
+$bg-color: rgba(209, 121, 49, 1);
+#bookshelf {
+    width: 80%;
+    margin: 0 auto;
+    background: $bg-color no-repeat fixed;
+    @include prefixer(perspective, 1000);
+    @include prefixer(perspective-origin, 50% 50%);
+    padding: .2rem;
+    position: relative;
+    @include prefixer(box-sizing, border-box);
+    .floor {
+        @include prefixer(transform-style, preserve-3d);
+        @include prefixer(transform-origin, 0 0);
+        position: relative;
+        margin: .2rem auto;
+        width: 100%;
+        height: $bg-height;
+        @include prefixer(transform, translateZ(-$bg-transwidth));
+        & > div {
+            position: absolute;
+            @include prefixer(transform-style, preserve-3d);
+            @include prefixer(transform-origin, 0 0); 
+        }
+        .top, .down {
+            width: $bg-width;
+            height: $bg-transwidth;
+            @include prefixer-val(background-image, linear-gradient(to top, rgba(0, 0, 0, .2), rgba(0, 0, 0, .6)));
+        }
+        .right, .left {
+            width: $bg-transwidth;
+            height: $bg-height;
+            @include prefixer-val(background-image, linear-gradient(to left, rgba(0, 0, 0, .2), rgba(0, 0, 0, .6)));
+        }
+        .behind {
+            width: $bg-width;
+            height: $bg-height;
+            background-color: rgba(0, 0, 0, .6);
+        }
+        .top {
+            @include prefixer(transform, rotateX(90deg));
+        }
+        .down {
+            @include prefixer(transform, rotateX(90deg) translateZ(-$bg-height));
+        }
+        .right {
+            left: $bg-width;
+            @include prefixer(transform, rotateY(-90deg));
+        }
+        .left {
+            @include prefixer(transform, rotateY(-90deg));
+        }
+    }
+    .floor .removeBg {
+        background-color: $bg-color;
+        background-image: none;
+    }
+}

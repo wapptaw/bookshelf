@@ -1,0 +1,36 @@
+%init {
+    margin: 0;
+    padding: 0;
+    font-family: '微软雅黑', 'arial';
+}
+@mixin prefixer($attr, $val...) {
+    -webkit-#{$attr}: $val;
+    -moz-#{$attr}: $val;
+    -o-#{$attr}: $val;
+    -ms-#{$attr}: $val;
+    #{$attr}: $val;
+}
+@mixin prefixer-val($attr, $val...){
+    #{$attr}: -webkit-#{$val};
+    #{$attr}: -moz-#{$val};
+    #{$attr}: -o-#{$val};
+    #{$attr}: -ms-#{$val};
+    #{$attr}: $val;
+}
+@mixin keyframes($val) {
+    @-webkit-keyframes #{$val} {
+        @content;
+    }
+    @-moz-keyframes #{$val} {
+        @content;
+    }
+    @-o-keyframes #{$val} {
+        @content;
+    }
+    @-ms-keyframes #{$val} {
+        @content;
+    }
+    @keyframes #{$val} {
+        @content;
+    }
+}

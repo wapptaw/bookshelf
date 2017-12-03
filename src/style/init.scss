@@ -1,0 +1,17 @@
+html, body, div, article, section, nav, header, p, form, span, img, button {
+    @extend %init;
+} 
+html {
+    font-size: 100px;
+}
+ul, li {
+    @extend %init;
+    list-style: none;
+}
+a {
+    @extend %init;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    @extend %init;
+}
