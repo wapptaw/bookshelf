@@ -1,15 +1,17 @@
-$book-height: 0.9;
-#books {
+$book-height: 90%;
+.books {
     width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
     & > div {
         width: 5%;
-        height: $bg-height * $book-height;
+        height: $book-height;
         position: absolute;
+        bottom: 1px;
+        margin-left: 1px;
         @include prefixer(transform-style, preserve-3d);
         @include prefixer(transition, transform .5s ease);
-        margin-left: .2rem;
-        margin-top: .4rem + $bg-height * (1 - $book-height);
-        @include prefixer(transform, translateZ(-$bg-transwidth));
         & > div {
             position: absolute;
             @include prefixer(transform-style, preserve-3d);

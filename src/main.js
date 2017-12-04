@@ -10,7 +10,7 @@ if(len > 3) {
     for(let i = 3; i < len; i ++) {
         let floorEle = document.createElement('div');
         floorEle.className = `floor${i} floor`;
-        ['top', 'right', 'down', 'left', 'behind'].forEach((val) => {
+        ['top', 'right', 'down', 'left', 'behind', 'books'].forEach((val) => {
             let surface = document.createElement('div');
             surface.className = val;
             floorEle.appendChild(surface);
@@ -20,10 +20,11 @@ if(len > 3) {
     oBookshelf.appendChild(newEle);
 } // 增加floor节点
 
-var oBooks = document.getElementById('books');
-oBooks.appendChild(booksEle); // 把书籍节点放入books节点
-
 var floors = oBookshelf.querySelectorAll('.floor');
+for(let i = 0; i < len; i ++) {
+    floors[i].querySelector('.books').appendChild(booksEle[i]);
+} // 把书籍节点放入books节点
+
 let floorsLen = floors.length;
 let noSelection = Math.floor(floorsLen / 2);
 if(floorsLen % 2 === 0) {
@@ -51,7 +52,7 @@ if(floorsLen % 2 === 0) {
 } // 修正css渲染双面导致的预期之外的效果
 
 window.onload = function() {
-    let aBooks = oBooks.querySelectorAll('.book');
+    let aBooks = oBookshelf.querySelectorAll('.book');
 
     for(let v = 0, len = aBooks.length; v < len; v ++) {
         aBooks[v].addEventListener('click', function() {
@@ -62,15 +63,18 @@ window.onload = function() {
             }
             if(this.classList.contains('click')) {
                 Book.animation.back.call(this, this); // call用来绑定this
-                this.addEventListener('mouseover', Book.animation.hover);
             }else {
                 Book.animation.start.call(this, this);
-                this.removeEventListener('mouseover', Book.animation.hover);
+                Book.animation.leave.call(this, this);
             }
+            this.removeEventListener('mouseover', Book.animation.hover);
+            this.removeEventListener('mouseout', Book.animation.leave);
         });  
         aBooks[v].addEventListener(animationEnd(), function() {
             if(this.classList.contains('back')) {
                 this.classList.remove('back');
+                this.addEventListener('mouseover', Book.animation.hover);
+                this.addEventListener('mouseout', Book.animation.leave);
             }
         }) 
     }
