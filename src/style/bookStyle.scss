@@ -17,6 +17,9 @@ $book-height: 90%;
             @include prefixer(transform-style, preserve-3d);
             @include prefixer(transform-origin, 0 0);
             background-color: #f00;
+            &:hover {
+                cursor: pointer;
+            }
         }
         .b-top {
             width: 100%;

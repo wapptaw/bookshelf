@@ -81,8 +81,6 @@ window.onload = function() {
     }
 }
 
-let test = createArc(200, 20, 10, {height: '200px', backgroundColor: '#000'});
-oBookshelf.appendChild(test);
 
 
 
