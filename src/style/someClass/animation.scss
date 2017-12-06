@@ -9,12 +9,12 @@
         @include prefixer(transform, translate3d(50%, 0, 1.6rem) rotateY(-90deg));
     }
     100% {
-        @include prefixer(transform, translate3d(100%, 0, 1.6rem) rotateY(-90deg));
+        @include prefixer(transform, translate3d(200%, 0, 1.6rem) rotateY(-90deg));
     }
 }
 @include keyframes(back) {
     0% {
-        @include prefixer(transform, translate3d(100%, 0, 1.6rem) rotateY(-90deg));
+        @include prefixer(transform, translate3d(200%, 0, 1.6rem) rotateY(-90deg));
     }
     30% {
         @include prefixer(transform, translate3d(50%, 0, 1.6rem) rotateY(-90deg));

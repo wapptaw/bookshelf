@@ -2,6 +2,7 @@ import './style/style.scss';
 import Book from './js/Obeject-book.js';
 import {booksEle, aBook} from './js/createBook.js'; // 书籍集合对象
 import {animationEnd} from './js/tool.js';
+import {createArc} from './js/tool.js';
 
 let len = aBook.length;
 var oBookshelf = document.getElementById('bookshelf');
@@ -79,6 +80,9 @@ window.onload = function() {
         }) 
     }
 }
+
+let test = createArc(200, 20, 10, {height: '200px', backgroundColor: '#000'});
+oBookshelf.appendChild(test);
 
 
 

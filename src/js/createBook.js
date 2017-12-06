@@ -3,7 +3,7 @@ import books from './books'; // 书籍信息
 import {averageSplit} from './tool.js';
 
 let len = books.length;
-let col = 100 / 50; // 每行book的数量
+let col = 100 / 5; // 每行book的数量
 let aBook = averageSplit(books, col);
 let row = aBook.length;
 let booksEle = [];
