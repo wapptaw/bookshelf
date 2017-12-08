@@ -4,7 +4,7 @@
 * 书架使用css3模拟而成，层数根据书籍的数量增加，最少三层
 * 正常
 
-![取书](screen/image1.png)
+![取书](https://github.com/wapptaw/bookshelf/blob/master/screen/image1.PNG)
 * 鼠标悬停
 
 ![鼠标悬停](screen/image2.png)
