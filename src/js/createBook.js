@@ -13,7 +13,7 @@ for(let i = 0; i < row; i ++) {
     aBook[i].forEach((val, index) => {
         details = {
             style: {
-                left: `${index * 5}%`,
+                left: `${index * 5.1}%`,
             }
         }
         let frag = new Book.create(val).tbook(details);
