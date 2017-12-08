@@ -7,8 +7,8 @@
 ![取书](https://github.com/wapptaw/bookshelf/blob/master/screen/image1.PNG)
 * 鼠标悬停
 
-![鼠标悬停](screen/image2.png)
+![鼠标悬停](https://github.com/wapptaw/bookshelf/blob/master/screen/image2.PNG)
 * 鼠标点击后
 
-![取出](screen/image3.png)
+![取出](https://github.com/wapptaw/bookshelf/blob/master/screen/image3.PNG)
 
